@@ -1,8 +1,8 @@
 class SearchService
 
   def self.search_ingredients(ingredient)
-    response = conn.get("/fdc/v1/foods/search?query=#{ingredient}")
-    
+    response = self.conn.get("/fdc/v1/foods/search?query=ingredients:#{ingredient}")
+
     json = JSON.parse(response.body, symbolize_names: true)
   end
 

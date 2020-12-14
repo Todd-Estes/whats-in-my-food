@@ -6,10 +6,10 @@ RSpec.describe "Food Search" do
     fill_in :q, with: "sweet potatoes"
     click_on 'Search'
     expect(current_path).to eq('/foods')
-    expect(page).to have_content('Search Results: ?')
+    expect(page).to have_content('Search Results: 50')
     expect(page).to have_css('.foods', count: 10)
     within(first('.foods')) do
-      expect(page).to have_css('.upc')
+      expect(page).to have_css('.upc_code')
       expect(page).to have_css('.description')
       expect(page).to have_css('.brand_owner')
       expect(page).to have_css('.ingredients')

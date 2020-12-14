@@ -1,0 +1,20 @@
+<h1>Sweet Potato Ingredient Search Results</h1>
+
+<p>Search Results: <%= @foods.count %> </p>
+
+<% @foods[0..9].each do |food| %>
+  <ul class='foods'>
+    <p class='upc_code'>
+      <%= food.upc_code %>
+    </p>
+    <p class='description'>
+      <%= food.description %>
+    </p>
+    <p class='brand_owner'>
+      <%= food.brand_owner %>
+    </p>
+    <p class='ingredients'>
+      <%= food.ingredients %>
+    </p>
+  </ul>
+<% end %>
